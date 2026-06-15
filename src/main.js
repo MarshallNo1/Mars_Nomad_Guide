@@ -439,12 +439,12 @@ function attachHandlers() {
     render()
   })
 
-  // 社群連結（之後可從 config 改）
+  // Mars 的社群連結
   const ig = document.getElementById('igLink')
   const th = document.getElementById('threadsLink')
   const SOCIAL = {
-    instagram: 'https://www.instagram.com/', // TODO: 換成 Mars 的 IG
-    threads:   'https://www.threads.net/',   // TODO: 換成 Mars 的 Threads
+    instagram: 'https://www.instagram.com/mars.93.tw',
+    threads:   'https://www.threads.com/@mars.93.tw',
   }
   if (ig) ig.href = SOCIAL.instagram
   if (th) th.href = SOCIAL.threads
