@@ -1,0 +1,52 @@
+{
+  "brand": {
+    "name": "Mars's Field Guide",
+    "sub": "Panduan tinggal untuk nomad digital"
+  },
+  "nav": {
+    "city": "Kota",
+    "lang": "Bahasa"
+  },
+  "hero": {
+    "kicker": "Edisi 01 · Bali",
+    "scrollHint": "Gulir untuk jelajahi"
+  },
+  "filter": {
+    "all": "Semua",
+    "category": "Kategori",
+    "area": "Area",
+    "tag": "Tag",
+    "search": "Cari nama, tag…",
+    "clear": "Hapus filter",
+    "resultCount": "{{count}} hasil"
+  },
+  "category": {
+    "coworking": "Kerja & Kafe",
+    "coliving": "Tempat Tinggal",
+    "community": "Komunitas",
+    "event": "Acara & Meetup"
+  },
+  "section": {
+    "coworking": "Kerja (Coworking / Kafe)",
+    "coliving": "Tempat Tinggal (Co-living / Hostel)",
+    "community": "Komunitas",
+    "event": "Acara & Meetup"
+  },
+  "card": {
+    "openMap": "Google Maps",
+    "openLink": "Kunjungi",
+    "host": "Host",
+    "area": "Area"
+  },
+  "footer": {
+    "tagline": "Tinggal × Teknologi × Wellness",
+    "by": "Dikurasi oleh Mars — teknolog remote yang tinggal berpindah-pindah.",
+    "rights": "© {{year}} Mars · Hak cipta dilindungi",
+    "follow": "Ikuti Mars",
+    "coffee": "Belikan Mars kopi ☕"
+  },
+  "empty": {
+    "title": "Tidak ada hasil",
+    "desc": "Coba hapus sebagian filter atau ganti kata kunci."
+  }
+}

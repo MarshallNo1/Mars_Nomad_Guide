@@ -1,0 +1,52 @@
+{
+  "brand": {
+    "name": "Mars's Field Guide",
+    "sub": "數位遊牧旅居指南"
+  },
+  "nav": {
+    "city": "城市",
+    "lang": "語言"
+  },
+  "hero": {
+    "kicker": "Edition 01 · Bali",
+    "scrollHint": "向下捲動探索"
+  },
+  "filter": {
+    "all": "全部",
+    "category": "類別",
+    "area": "地區",
+    "tag": "標籤",
+    "search": "搜尋店名、標籤…",
+    "clear": "清除篩選",
+    "resultCount": "{{count}} 個結果"
+  },
+  "category": {
+    "coworking": "辦公・咖啡",
+    "coliving": "住宿・共居",
+    "community": "社群",
+    "event": "活動・聚會"
+  },
+  "section": {
+    "coworking": "辦公 (Co-working Space / Café)",
+    "coliving": "住宿 (Co-living Space / Hostel)",
+    "community": "社群",
+    "event": "活動・聚會"
+  },
+  "card": {
+    "openMap": "Google Maps",
+    "openLink": "前往",
+    "host": "主辦",
+    "area": "地區"
+  },
+  "footer": {
+    "tagline": "旅居 × 科技 × Wellness",
+    "by": "由 Mars 整理 — 一位熱愛遠端工作與旅居各地的科技人。",
+    "rights": "© {{year}} Mars · 保留所有權利",
+    "follow": "Follow Mars",
+    "coffee": "請 Mars 喝杯咖啡 ☕"
+  },
+  "empty": {
+    "title": "找不到符合條件的結果",
+    "desc": "試著清除部分篩選或換個關鍵字。"
+  }
+}

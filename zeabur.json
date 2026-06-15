@@ -1,0 +1,9 @@
+{
+  "$schema": "https://schema.zeabur.app/template.json",
+  "build": {
+    "command": "npm run build"
+  },
+  "output": "dist",
+  "serverless": false,
+  "type": "static"
+}

@@ -1,0 +1,52 @@
+{
+  "brand": {
+    "name": "Mars's Field Guide",
+    "sub": "A digital nomad's living guide"
+  },
+  "nav": {
+    "city": "City",
+    "lang": "Language"
+  },
+  "hero": {
+    "kicker": "Edition 01 · Bali",
+    "scrollHint": "Scroll to explore"
+  },
+  "filter": {
+    "all": "All",
+    "category": "Category",
+    "area": "Area",
+    "tag": "Tag",
+    "search": "Search names, tags…",
+    "clear": "Clear filters",
+    "resultCount": "{{count}} results"
+  },
+  "category": {
+    "coworking": "Work & Café",
+    "coliving": "Stay & Co-living",
+    "community": "Community",
+    "event": "Events & Meetups"
+  },
+  "section": {
+    "coworking": "Work (Co-working / Café)",
+    "coliving": "Stay (Co-living / Hostel)",
+    "community": "Community",
+    "event": "Events & Meetups"
+  },
+  "card": {
+    "openMap": "Google Maps",
+    "openLink": "Visit",
+    "host": "Host",
+    "area": "Area"
+  },
+  "footer": {
+    "tagline": "Living × Tech × Wellness",
+    "by": "Curated by Mars — a remote-working technologist living between places.",
+    "rights": "© {{year}} Mars · All rights reserved",
+    "follow": "Follow Mars",
+    "coffee": "Buy Mars a coffee ☕"
+  },
+  "empty": {
+    "title": "No matches found",
+    "desc": "Try clearing some filters or a different keyword."
+  }
+}

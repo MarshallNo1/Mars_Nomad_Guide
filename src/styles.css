@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-ink-950 text-sand-100 font-sans antialiased;
+    background-image:
+      radial-gradient(at 12% 8%, rgba(214, 90, 54, 0.08) 0, transparent 45%),
+      radial-gradient(at 88% 92%, rgba(62, 220, 130, 0.06) 0, transparent 45%);
+    background-attachment: fixed;
+  }
+  ::selection {
+    background: theme('colors.mars.500');
+    color: theme('colors.sand.50');
+  }
+}
+
+@layer components {
+  .container-narrow {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8;
+  }
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-ink-600 bg-ink-800/70 px-3 py-1 text-xs font-medium text-sand-200 transition;
+  }
+  .chip-active {
+    @apply border-mars-500/60 bg-mars-500/15 text-mars-400;
+  }
+  .chip:hover {
+    @apply border-sand-300/40 text-sand-100;
+  }
+  .card {
+    @apply relative flex flex-col overflow-hidden rounded-2xl border border-ink-700/80 bg-ink-900/70 transition duration-300 hover:border-mars-500/40 hover:-translate-y-0.5 hover:shadow-[0_20px_40px_-20px_rgba(214,90,54,0.35)];
+  }
+  .card-img {
+    @apply aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-[1.04];
+  }
+  .btn-ghost {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-ink-600 px-3 py-1.5 text-xs font-medium text-sand-200 transition hover:border-sand-300/50 hover:text-sand-50;
+  }
+  .btn-primary {
+    @apply inline-flex items-center gap-1.5 rounded-full bg-mars-500 px-3 py-1.5 text-xs font-semibold text-sand-50 transition hover:bg-mars-400;
+  }
+  .section-title {
+    @apply font-serif text-3xl sm:text-4xl text-sand-50 tracking-tight;
+  }
+  .section-rule {
+    @apply mt-3 h-px w-full bg-gradient-to-r from-sand-300/20 via-sand-300/5 to-transparent;
+  }
+  .label-overline {
+    @apply text-[10px] uppercase tracking-[0.25em] text-sand-300/70 font-mono;
+  }
+  .select-pill {
+    @apply appearance-none rounded-full border border-ink-600 bg-ink-800/70 px-3.5 py-2 pr-8 text-sm text-sand-100 transition focus:border-mars-500/60 focus:outline-none focus:ring-1 focus:ring-mars-500/40 cursor-pointer;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23cdb585' stroke-width='2'><path d='M6 9l6 6 6-6'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 0.7rem center;
+    background-size: 1rem;
+  }
+}
+
+/* 動畫：fade-in 卡片 */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-up { animation: fadeUp 0.4s ease both; }
+
+/* 隱藏 alpine x-cloak 前的閃爍 */
+[x-cloak] { display: none !important; }
