@@ -6,12 +6,19 @@ import en from './locales/en.json'
 import id from './locales/id.json'
 
 import baliData from './data/bali.json'
+import nomeoBaliEvents from './data/nomeo-bali-events.json'
 
 // ──────────────────────────────────────────────────────────────────────────
 // 多城市資料註冊：之後加峴港 / 清邁，只要 import 新 JSON 並 push 進來即可
+// Nomeo 動態活動會合併進每個城市的 places
 // ──────────────────────────────────────────────────────────────────────────
+const baliMerged = {
+  ...baliData,
+  places: [...baliData.places, ...(nomeoBaliEvents?.places || [])],
+}
+
 const CITIES = {
-  bali: baliData,
+  bali: baliMerged,
   // danang: danangData,
   // chiangmai: chiangmaiData,
 }
@@ -291,13 +298,13 @@ function renderCard(p) {
   return `
     <article class="card group fade-up">
       <div class="overflow-hidden">
-        <img src="${p.image || fallback}" alt="${escapeAttr(p.name)}" loading="lazy"
+        <img src="${p.image || fallback}" alt="${escapeAttr(tField(p.name))}" loading="lazy"
           onerror="this.src='${fallback}'"
           class="card-img"/>
       </div>
       <div class="flex flex-1 flex-col p-5">
         <div class="flex items-start justify-between gap-3">
-          <h3 class="font-serif text-xl text-sand-50 leading-tight">${escapeHtml(p.name)}</h3>
+          <h3 class="font-serif text-xl text-sand-50 leading-tight">${escapeHtml(tField(p.name))}</h3>
           ${areaLabel ? `<span class="chip text-[10px] py-0.5 shrink-0">📍 ${areaLabel}</span>` : ''}
         </div>
         <p class="mt-2 text-sm text-sand-200/75 leading-relaxed line-clamp-3">${escapeHtml(tField(p.description))}</p>
@@ -370,11 +377,14 @@ function applyFilter(places) {
     if (area !== 'all' && p.area !== area && p.area !== 'all') return false
     if (tag !== 'all' && !(p.tags || []).includes(tag)) return false
     if (kw) {
-      const haystack = [
-        p.name,
-        ...(p.tags || []),
-        tField(p.description),
-      ]
+      // 搜尋時涵蓋所有語言的名稱與描述
+      const nameAllLangs =
+        typeof p.name === 'string' ? p.name : Object.values(p.name || {}).join(' ')
+      const descAllLangs =
+        typeof p.description === 'string'
+          ? p.description
+          : Object.values(p.description || {}).join(' ')
+      const haystack = [nameAllLangs, ...(p.tags || []), descAllLangs]
         .join(' ')
         .toLowerCase()
       if (!haystack.includes(kw)) return false

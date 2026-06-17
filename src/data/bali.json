@@ -571,7 +571,7 @@
 
     {
       "id": "badminton-meetup",
-      "name": "Badminton 羽球聚會",
+      "name": { "zh": "Badminton 羽球聚會", "en": "Badminton Meetup", "id": "Meetup Badminton" },
       "category": "event",
       "area": "canggu",
       "tags": ["sport", "badminton", "social"],
@@ -586,7 +586,7 @@
     },
     {
       "id": "padel-booking",
-      "name": "Padel 板網球場地預約",
+      "name": { "zh": "Padel 板網球場地預約", "en": "Padel Court Booking", "id": "Booking Lapangan Padel" },
       "category": "event",
       "area": "canggu",
       "tags": ["sport", "padel"],
@@ -601,7 +601,7 @@
     },
     {
       "id": "bukithub-coworking-free",
-      "name": "BukitHub Coworking 一日免費體驗",
+      "name": { "zh": "BukitHub Coworking 一日免費體驗", "en": "BukitHub Coworking Free Day Trial", "id": "Trial Gratis Sehari BukitHub Coworking" },
       "category": "event",
       "area": "canggu",
       "tags": ["coworking", "free", "trial"],
@@ -648,7 +648,7 @@
     },
     {
       "id": "canggu-nomad-meetup",
-      "name": "Canggu 數位遊牧聚會",
+      "name": { "zh": "Canggu 數位遊牧聚會", "en": "Canggu Digital Nomad Meetup", "id": "Meetup Nomad Digital Canggu" },
       "category": "event",
       "area": "canggu",
       "tags": ["nomad", "social", "networking"],
