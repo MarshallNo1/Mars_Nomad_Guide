@@ -21,16 +21,20 @@
     "resultCount": "{{count}} 個結果"
   },
   "category": {
-    "coworking": "辦公・咖啡",
-    "coliving": "住宿・共居",
-    "community": "社群",
-    "event": "活動・聚會"
+    "eat": "吃",
+    "stay": "住",
+    "work": "工作",
+    "wellness": "身心靈",
+    "play": "玩",
+    "connect": "連結"
   },
   "section": {
-    "coworking": "辦公 (Co-working Space / Café)",
-    "coliving": "住宿 (Co-living Space / Hostel)",
-    "community": "社群",
-    "event": "活動・聚會"
+    "eat": "🍽️ 吃 (Eat)",
+    "stay": "🏨 住 (Stay)",
+    "work": "💻 工作 (Work)",
+    "wellness": "🧘 身心靈 (Wellness)",
+    "play": "🌊 玩 (Play)",
+    "connect": "👥 連結 (Connect)"
   },
   "card": {
     "openMap": "Google Maps",

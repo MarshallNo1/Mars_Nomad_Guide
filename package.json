@@ -6,7 +6,9 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview --host 0.0.0.0 --port 3000",
-    "scrape:nomeo": "node scripts/scrape-nomeo.mjs"
+    "scrape:nomeo": "node scripts/scrape-nomeo.mjs",
+    "scrape:megatix": "node scripts/scrape-megatix.mjs",
+    "scrape:all": "npm run scrape:nomeo && npm run scrape:megatix"
   },
   "dependencies": {
     "alpinejs": "^3.14.3",

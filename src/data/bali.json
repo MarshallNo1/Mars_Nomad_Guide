@@ -19,19 +19,71 @@
       "id": "Daftar pilihan coworking, co-living, komunitas, dan meetup untuk nomad digital di Bali. Filter berdasarkan area, kategori, dan tag."
     },
     "areas": [
-      { "slug": "canggu",   "name": { "zh": "Canggu",    "en": "Canggu",    "id": "Canggu" },    "blurb": { "zh": "峇里島數位遊牧 / 衝浪 / 夜生活 / 酒吧的大本營", "en": "HQ for digital nomads, surfing, nightlife and bars", "id": "Pusat nomad digital, surfing, nightlife & bar" } },
-      { "slug": "seminyak", "name": { "zh": "Seminyak",  "en": "Seminyak",  "id": "Seminyak" },  "blurb": { "zh": "類似更放鬆版的 Canggu，咖啡廳 / 夜生活 / 酒吧", "en": "A more relaxed version of Canggu — cafés, nightlife, bars", "id": "Versi lebih santai dari Canggu — kafe, nightlife, bar" } },
-      { "slug": "ubud",     "name": { "zh": "Ubud",      "en": "Ubud",      "id": "Ubud" },      "blurb": { "zh": "旅修 / 瑜珈基地，充滿瀑布和叢林。也有不少數位遊牧在這生活", "en": "Yoga & retreat hub, waterfalls and jungle. Home to many long-stay nomads.", "id": "Pusat yoga & retreat, air terjun & hutan. Banyak nomad tinggal di sini." } },
-      { "slug": "pererenan","name": { "zh": "Pererenan", "en": "Pererenan", "id": "Pererenan" }, "blurb": { "zh": "Canggu 北邊更悠閒的衝浪小區", "en": "Quieter surf neighbourhood north of Canggu", "id": "Area surfing yang lebih tenang di utara Canggu" } }
+      {
+        "slug": "canggu",
+        "name": {
+          "zh": "Canggu",
+          "en": "Canggu",
+          "id": "Canggu"
+        },
+        "blurb": {
+          "zh": "峇里島數位遊牧 / 衝浪 / 夜生活 / 酒吧的大本營",
+          "en": "HQ for digital nomads, surfing, nightlife and bars",
+          "id": "Pusat nomad digital, surfing, nightlife & bar"
+        }
+      },
+      {
+        "slug": "seminyak",
+        "name": {
+          "zh": "Seminyak",
+          "en": "Seminyak",
+          "id": "Seminyak"
+        },
+        "blurb": {
+          "zh": "類似更放鬆版的 Canggu，咖啡廳 / 夜生活 / 酒吧",
+          "en": "A more relaxed version of Canggu — cafés, nightlife, bars",
+          "id": "Versi lebih santai dari Canggu — kafe, nightlife, bar"
+        }
+      },
+      {
+        "slug": "ubud",
+        "name": {
+          "zh": "Ubud",
+          "en": "Ubud",
+          "id": "Ubud"
+        },
+        "blurb": {
+          "zh": "旅修 / 瑜珈基地，充滿瀑布和叢林。也有不少數位遊牧在這生活",
+          "en": "Yoga & retreat hub, waterfalls and jungle. Home to many long-stay nomads.",
+          "id": "Pusat yoga & retreat, air terjun & hutan. Banyak nomad tinggal di sini."
+        }
+      },
+      {
+        "slug": "pererenan",
+        "name": {
+          "zh": "Pererenan",
+          "en": "Pererenan",
+          "id": "Pererenan"
+        },
+        "blurb": {
+          "zh": "Canggu 北邊更悠閒的衝浪小區",
+          "en": "Quieter surf neighbourhood north of Canggu",
+          "id": "Area surfing yang lebih tenang di utara Canggu"
+        }
+      }
     ]
   },
   "places": [
     {
       "id": "b-work-bali",
       "name": "B Work Bali",
-      "category": "coworking",
+      "category": "work",
       "area": "canggu",
-      "tags": ["coworking", "nomad-friendly", "fast-wifi"],
+      "tags": [
+        "coworking",
+        "nomad-friendly",
+        "fast-wifi"
+      ],
       "description": {
         "zh": "Canggu 老牌共同工作空間，遊牧客最常聚集的據點之一。",
         "en": "One of Canggu's classic coworking spaces — a long-time nomad hangout.",
@@ -44,9 +96,13 @@
     {
       "id": "tribal-canggu",
       "name": "Tribal",
-      "category": "coworking",
+      "category": "work",
       "area": "canggu",
-      "tags": ["coworking", "co-living", "community"],
+      "tags": [
+        "coworking",
+        "co-living",
+        "community"
+      ],
       "description": {
         "zh": "結合共居與共同工作的社群基地，常有 networking 活動。",
         "en": "Coworking + co-living combo with frequent community events.",
@@ -59,9 +115,13 @@
     {
       "id": "awan-connection",
       "name": "Awan Connection",
-      "category": "coworking",
+      "category": "work",
       "area": "canggu",
-      "tags": ["coworking", "community", "wellness"],
+      "tags": [
+        "coworking",
+        "community",
+        "wellness"
+      ],
       "description": {
         "zh": "小而美的共同工作空間，常辦女性社交與遊牧聚會。",
         "en": "Cozy coworking known for women-led socials and nomad meetups.",
@@ -74,9 +134,13 @@
     {
       "id": "outpost-canggu",
       "name": "Outpost Canggu",
-      "category": "coworking",
+      "category": "work",
       "area": "canggu",
-      "tags": ["coworking", "co-living", "membership"],
+      "tags": [
+        "coworking",
+        "co-living",
+        "membership"
+      ],
       "description": {
         "zh": "東南亞知名遊牧連鎖品牌，Canggu 分點。會員制度。",
         "en": "Well-known SE-Asia nomad chain. Membership-based.",
@@ -89,9 +153,13 @@
     {
       "id": "tropical-nomad",
       "name": "Tropical Nomad",
-      "category": "coworking",
+      "category": "work",
       "area": "canggu",
-      "tags": ["coworking", "cafe", "fast-wifi"],
+      "tags": [
+        "coworking",
+        "cafe",
+        "fast-wifi"
+      ],
       "description": {
         "zh": "Canggu 中心點，網速快、餐飲齊全，新手第一站。",
         "en": "Central Canggu, solid wifi and food — a great first stop.",
@@ -104,9 +172,13 @@
     {
       "id": "how-i-met-coffee",
       "name": "How I Met Coffee",
-      "category": "coworking",
+      "category": "work",
       "area": "seminyak",
-      "tags": ["cafe", "cafe-work", "coffee"],
+      "tags": [
+        "cafe",
+        "cafe-work",
+        "coffee"
+      ],
       "description": {
         "zh": "Seminyak 適合帶筆電的咖啡廳，環境舒適。",
         "en": "Laptop-friendly café in Seminyak with a comfortable vibe.",
@@ -119,9 +191,13 @@
     {
       "id": "livingstone",
       "name": "Livingstone",
-      "category": "coworking",
+      "category": "work",
       "area": "seminyak",
-      "tags": ["cafe", "brunch", "cafe-work"],
+      "tags": [
+        "cafe",
+        "brunch",
+        "cafe-work"
+      ],
       "description": {
         "zh": "知名 brunch 咖啡廳，早上去工作很愜意。",
         "en": "Famous brunch café — pleasant to work from in the morning.",
@@ -134,9 +210,13 @@
     {
       "id": "kim-soo",
       "name": "Kim Soo",
-      "category": "coworking",
+      "category": "work",
       "area": "seminyak",
-      "tags": ["cafe", "cafe-work", "aesthetic"],
+      "tags": [
+        "cafe",
+        "cafe-work",
+        "aesthetic"
+      ],
       "description": {
         "zh": "氛圍極好的選物店咖啡，適合短時段工作。",
         "en": "Beautifully styled concept-store café for shorter work sessions.",
@@ -149,9 +229,13 @@
     {
       "id": "crypto-cafe-bali",
       "name": "Crypto Cafe Bali",
-      "category": "coworking",
+      "category": "work",
       "area": "seminyak",
-      "tags": ["cafe", "web3", "crypto"],
+      "tags": [
+        "cafe",
+        "web3",
+        "crypto"
+      ],
       "description": {
         "zh": "Web3 / 加密圈遊牧聚集地，常見 token 支付與聚會。",
         "en": "Hub for Web3 / crypto nomads. Accepts token payments, hosts meetups.",
@@ -164,9 +248,13 @@
     {
       "id": "titik-temu-cafe",
       "name": "Titik Temu Cafe",
-      "category": "coworking",
+      "category": "work",
       "area": "seminyak",
-      "tags": ["cafe", "cafe-work", "coffee"],
+      "tags": [
+        "cafe",
+        "cafe-work",
+        "coffee"
+      ],
       "description": {
         "zh": "本地人氣咖啡品牌，網速穩定，價格友善。",
         "en": "Popular local coffee brand. Stable wifi, friendly prices.",
@@ -179,9 +267,13 @@
     {
       "id": "outpost-ubud-nyuh-kuning",
       "name": "Outpost Ubud Nyuh Kuning",
-      "category": "coworking",
+      "category": "work",
       "area": "ubud",
-      "tags": ["coworking", "co-living", "jungle"],
+      "tags": [
+        "coworking",
+        "co-living",
+        "jungle"
+      ],
       "description": {
         "zh": "Outpost 在 Ubud 的叢林版本，主打靜謐工作環境。",
         "en": "Outpost's jungle outpost in Ubud — quiet and focused.",
@@ -194,9 +286,13 @@
     {
       "id": "outpost-ubud-penestanan",
       "name": "Outpost Ubud Penestanan",
-      "category": "coworking",
+      "category": "work",
       "area": "ubud",
-      "tags": ["coworking", "co-living", "jungle"],
+      "tags": [
+        "coworking",
+        "co-living",
+        "jungle"
+      ],
       "description": {
         "zh": "Outpost Ubud 第二個分點，旁邊就是稻田。",
         "en": "Outpost Ubud's second location — right next to rice fields.",
@@ -209,9 +305,13 @@
     {
       "id": "pukako-paddyfield",
       "name": "PUKAKO by Paddyfield",
-      "category": "coworking",
+      "category": "work",
       "area": "ubud",
-      "tags": ["cafe", "cafe-work", "ricefield-view"],
+      "tags": [
+        "cafe",
+        "cafe-work",
+        "ricefield-view"
+      ],
       "description": {
         "zh": "稻田景觀咖啡廳，氛圍極棒。",
         "en": "Café with rice-paddy view — gorgeous setting.",
@@ -224,9 +324,12 @@
     {
       "id": "littletalks-ubud",
       "name": "Littletalks Ubud",
-      "category": "coworking",
+      "category": "work",
       "area": "ubud",
-      "tags": ["cafe", "cafe-work"],
+      "tags": [
+        "cafe",
+        "cafe-work"
+      ],
       "description": {
         "zh": "小而溫馨的咖啡空間，網速 OK。",
         "en": "Small, cozy café with decent wifi.",
@@ -239,9 +342,13 @@
     {
       "id": "ivy-cafe-ubud",
       "name": "Ivy Cafe",
-      "category": "coworking",
+      "category": "work",
       "area": "ubud",
-      "tags": ["cafe", "cafe-work", "brunch"],
+      "tags": [
+        "cafe",
+        "cafe-work",
+        "brunch"
+      ],
       "description": {
         "zh": "Ubud 高人氣 brunch 咖啡，輕食與工作都適合。",
         "en": "Popular Ubud brunch café — good for light meals and work.",
@@ -254,9 +361,12 @@
     {
       "id": "onion-popos",
       "name": "The Onion Co & Popo's",
-      "category": "coworking",
+      "category": "work",
       "area": "ubud",
-      "tags": ["cafe", "cafe-work"],
+      "tags": [
+        "cafe",
+        "cafe-work"
+      ],
       "description": {
         "zh": "兩個鄰近的人氣咖啡空間，可換場景工作。",
         "en": "Two neighbouring popular spots — swap scenes while working.",
@@ -269,9 +379,13 @@
     {
       "id": "reina-jungla",
       "name": "Reina Jungla",
-      "category": "coworking",
+      "category": "work",
       "area": "ubud",
-      "tags": ["cafe", "jungle", "aesthetic"],
+      "tags": [
+        "cafe",
+        "jungle",
+        "aesthetic"
+      ],
       "description": {
         "zh": "叢林氛圍咖啡，視覺超適合工作。",
         "en": "Jungle-aesthetic café with a stunning vibe.",
@@ -281,13 +395,16 @@
       "gmaps": "https://www.google.com/maps/search/?api=1&query=Reina+Jungla+Ubud",
       "link": ""
     },
-
     {
       "id": "tribal-coliving",
       "name": "Tribal (Co-living)",
-      "category": "coliving",
+      "category": "stay",
       "area": "canggu",
-      "tags": ["co-living", "community", "long-stay"],
+      "tags": [
+        "co-living",
+        "community",
+        "long-stay"
+      ],
       "description": {
         "zh": "Canggu 知名共居社群，月租含活動。",
         "en": "Well-known co-living in Canggu — monthly rates include events.",
@@ -300,9 +417,13 @@
     {
       "id": "roommates-canggu",
       "name": "Roommates",
-      "category": "coliving",
+      "category": "stay",
       "area": "canggu",
-      "tags": ["co-living", "social", "affordable"],
+      "tags": [
+        "co-living",
+        "social",
+        "affordable"
+      ],
       "description": {
         "zh": "Canggu 社交型共居，新朋友超多。",
         "en": "Social co-living in Canggu — meet lots of new people.",
@@ -315,9 +436,13 @@
     {
       "id": "kos-one-hostel",
       "name": "Kos One Hostel",
-      "category": "coliving",
+      "category": "stay",
       "area": "canggu",
-      "tags": ["hostel", "budget", "social"],
+      "tags": [
+        "hostel",
+        "budget",
+        "social"
+      ],
       "description": {
         "zh": "Canggu 平價青旅，背包客與短居遊牧首選。",
         "en": "Budget hostel in Canggu — favourite of backpackers and short-stay nomads.",
@@ -330,9 +455,13 @@
     {
       "id": "coco-pineapple-pants",
       "name": "Coco & Pineapple Pants Hostel",
-      "category": "coliving",
+      "category": "stay",
       "area": "canggu",
-      "tags": ["hostel", "party", "social"],
+      "tags": [
+        "hostel",
+        "party",
+        "social"
+      ],
       "description": {
         "zh": "派對氛圍青旅，年輕遊牧愛去。",
         "en": "Party-vibe hostel — popular with younger nomads.",
@@ -345,9 +474,13 @@
     {
       "id": "awan-coliving",
       "name": "Awan Connection (Co-living)",
-      "category": "coliving",
+      "category": "stay",
       "area": "canggu",
-      "tags": ["co-living", "wellness", "community"],
+      "tags": [
+        "co-living",
+        "wellness",
+        "community"
+      ],
       "description": {
         "zh": "Awan 的住宿端，結合社群與身心活動。",
         "en": "Awan's co-living side — combines community with wellness activities.",
@@ -360,9 +493,13 @@
     {
       "id": "outpost-canggu-coliving",
       "name": "Outpost Canggu (Co-living)",
-      "category": "coliving",
+      "category": "stay",
       "area": "canggu",
-      "tags": ["co-living", "membership", "long-stay"],
+      "tags": [
+        "co-living",
+        "membership",
+        "long-stay"
+      ],
       "description": {
         "zh": "Outpost Canggu 的住宿端，會員享受連動空間。",
         "en": "Outpost Canggu's living side — members access all spaces.",
@@ -375,9 +512,12 @@
     {
       "id": "white-penny-hostel",
       "name": "White Penny Hostel",
-      "category": "coliving",
+      "category": "stay",
       "area": "seminyak",
-      "tags": ["hostel", "budget"],
+      "tags": [
+        "hostel",
+        "budget"
+      ],
       "description": {
         "zh": "Seminyak 平價青旅，地點方便。",
         "en": "Budget hostel in Seminyak — convenient location.",
@@ -390,9 +530,12 @@
     {
       "id": "biliq-coliving",
       "name": "Biliq Coliving Space",
-      "category": "coliving",
+      "category": "stay",
       "area": "seminyak",
-      "tags": ["co-living", "long-stay"],
+      "tags": [
+        "co-living",
+        "long-stay"
+      ],
       "description": {
         "zh": "Seminyak 共居空間，價格中等，房型多。",
         "en": "Seminyak co-living with moderate pricing and varied rooms.",
@@ -405,9 +548,13 @@
     {
       "id": "poshtel-ubud",
       "name": "Poshtel Ubud",
-      "category": "coliving",
+      "category": "stay",
       "area": "ubud",
-      "tags": ["hostel", "social", "affordable"],
+      "tags": [
+        "hostel",
+        "social",
+        "affordable"
+      ],
       "description": {
         "zh": "Ubud 高 CP 值青旅，整潔現代。",
         "en": "Great-value Ubud hostel — clean and modern.",
@@ -420,9 +567,13 @@
     {
       "id": "ubud-tropical",
       "name": "Ubud Tropical",
-      "category": "coliving",
+      "category": "stay",
       "area": "ubud",
-      "tags": ["co-living", "tropical", "long-stay"],
+      "tags": [
+        "co-living",
+        "tropical",
+        "long-stay"
+      ],
       "description": {
         "zh": "Ubud 熱帶風共居，性價比佳。",
         "en": "Tropical-style co-living in Ubud with great value.",
@@ -435,9 +586,13 @@
     {
       "id": "yasa-backpacker",
       "name": "Yasa Backpacker House",
-      "category": "coliving",
+      "category": "stay",
       "area": "ubud",
-      "tags": ["hostel", "budget", "backpacker"],
+      "tags": [
+        "hostel",
+        "budget",
+        "backpacker"
+      ],
       "description": {
         "zh": "Ubud 經典背包客棧，認識新朋友首選。",
         "en": "Classic Ubud backpacker house — easy to meet new people.",
@@ -450,9 +605,13 @@
     {
       "id": "outpost-ubud-penestanan-coliving",
       "name": "Outpost Ubud Penestanan (Co-living)",
-      "category": "coliving",
+      "category": "stay",
       "area": "ubud",
-      "tags": ["co-living", "membership", "jungle"],
+      "tags": [
+        "co-living",
+        "membership",
+        "jungle"
+      ],
       "description": {
         "zh": "Outpost Ubud 住宿端，網速與環境都穩定。",
         "en": "Outpost Ubud's living side — stable wifi and environment.",
@@ -462,13 +621,16 @@
       "gmaps": "https://www.google.com/maps/search/?api=1&query=Outpost+Ubud+Penestanan",
       "link": "https://www.outpost-asia.com"
     },
-
     {
       "id": "digital-nomad-bali-fb",
       "name": "Digital Nomad in Bali",
-      "category": "community",
+      "category": "connect",
       "area": "all",
-      "tags": ["facebook", "general", "nomad"],
+      "tags": [
+        "facebook",
+        "general",
+        "nomad"
+      ],
       "description": {
         "zh": "峇里島數位遊牧最大的 Facebook 社團之一。",
         "en": "One of the largest digital-nomad Facebook groups for Bali.",
@@ -481,9 +643,13 @@
     {
       "id": "bali-nomads-main",
       "name": "Bali Nomads Main Group",
-      "category": "community",
+      "category": "connect",
       "area": "all",
-      "tags": ["telegram", "whatsapp", "general"],
+      "tags": [
+        "telegram",
+        "whatsapp",
+        "general"
+      ],
       "description": {
         "zh": "Bali Nomads 主群（Telegram / WhatsApp）。",
         "en": "Main Bali Nomads group on Telegram / WhatsApp.",
@@ -496,9 +662,13 @@
     {
       "id": "bali-nomads-ubud",
       "name": "Bali Nomads in Ubud",
-      "category": "community",
+      "category": "connect",
       "area": "ubud",
-      "tags": ["telegram", "ubud", "nomad"],
+      "tags": [
+        "telegram",
+        "ubud",
+        "nomad"
+      ],
       "description": {
         "zh": "Ubud 在地遊牧子群組。",
         "en": "Ubud-specific sub-group for nomads.",
@@ -511,9 +681,13 @@
     {
       "id": "bali-nomads-entrepreneurs",
       "name": "Bali Nomads Entrepreneurs",
-      "category": "community",
+      "category": "connect",
       "area": "all",
-      "tags": ["entrepreneur", "business", "founder"],
+      "tags": [
+        "entrepreneur",
+        "business",
+        "founder"
+      ],
       "description": {
         "zh": "創業者 / 老闆 / 自由業遊牧的群組。",
         "en": "For founders, freelancers and entrepreneurs.",
@@ -526,9 +700,12 @@
     {
       "id": "bali-nomads-coworking",
       "name": "Bali Nomads Coworking",
-      "category": "community",
+      "category": "connect",
       "area": "all",
-      "tags": ["coworking", "telegram"],
+      "tags": [
+        "coworking",
+        "telegram"
+      ],
       "description": {
         "zh": "找共同工作夥伴的群。",
         "en": "Group to find coworking buddies.",
@@ -541,9 +718,13 @@
     {
       "id": "bali-party-people",
       "name": "Bali Party People",
-      "category": "community",
+      "category": "connect",
       "area": "all",
-      "tags": ["nightlife", "party", "social"],
+      "tags": [
+        "nightlife",
+        "party",
+        "social"
+      ],
       "description": {
         "zh": "派對 / 夜生活活動資訊群。",
         "en": "Group for party and nightlife info.",
@@ -556,9 +737,13 @@
     {
       "id": "bali-content-creators",
       "name": "Bali Content Creators",
-      "category": "community",
+      "category": "connect",
       "area": "all",
-      "tags": ["content", "creator", "social-media"],
+      "tags": [
+        "content",
+        "creator",
+        "social-media"
+      ],
       "description": {
         "zh": "內容創作者交流圈。",
         "en": "Circle for content creators.",
@@ -568,13 +753,20 @@
       "gmaps": "",
       "link": ""
     },
-
     {
       "id": "badminton-meetup",
-      "name": { "zh": "Badminton 羽球聚會", "en": "Badminton Meetup", "id": "Meetup Badminton" },
-      "category": "event",
+      "name": {
+        "zh": "Badminton 羽球聚會",
+        "en": "Badminton Meetup",
+        "id": "Meetup Badminton"
+      },
+      "category": "connect",
       "area": "canggu",
-      "tags": ["sport", "badminton", "social"],
+      "tags": [
+        "sport",
+        "badminton",
+        "social"
+      ],
       "description": {
         "zh": "遊牧固定羽球聚會，新手歡迎。",
         "en": "Recurring badminton meetup — beginners welcome.",
@@ -586,10 +778,17 @@
     },
     {
       "id": "padel-booking",
-      "name": { "zh": "Padel 板網球場地預約", "en": "Padel Court Booking", "id": "Booking Lapangan Padel" },
-      "category": "event",
+      "name": {
+        "zh": "Padel 板網球場地預約",
+        "en": "Padel Court Booking",
+        "id": "Booking Lapangan Padel"
+      },
+      "category": "connect",
       "area": "canggu",
-      "tags": ["sport", "padel"],
+      "tags": [
+        "sport",
+        "padel"
+      ],
       "description": {
         "zh": "Padel 場地預約資訊，找球友一起玩。",
         "en": "Padel court booking info — find playing partners.",
@@ -601,10 +800,18 @@
     },
     {
       "id": "bukithub-coworking-free",
-      "name": { "zh": "BukitHub Coworking 一日免費體驗", "en": "BukitHub Coworking Free Day Trial", "id": "Trial Gratis Sehari BukitHub Coworking" },
-      "category": "event",
+      "name": {
+        "zh": "BukitHub Coworking 一日免費體驗",
+        "en": "BukitHub Coworking Free Day Trial",
+        "id": "Trial Gratis Sehari BukitHub Coworking"
+      },
+      "category": "connect",
       "area": "canggu",
-      "tags": ["coworking", "free", "trial"],
+      "tags": [
+        "coworking",
+        "free",
+        "trial"
+      ],
       "description": {
         "zh": "BukitHub 提供一日免費體驗，可先試再決定。",
         "en": "Free day trial at BukitHub — try before you commit.",
@@ -617,9 +824,13 @@
     {
       "id": "tuesday-coworking-ubud",
       "name": "Tuesday Coworking in Ubud",
-      "category": "event",
+      "category": "connect",
       "area": "ubud",
-      "tags": ["coworking", "weekly", "social"],
+      "tags": [
+        "coworking",
+        "weekly",
+        "social"
+      ],
       "host": "Lestari",
       "description": {
         "zh": "每週二 Ubud 遊牧共同工作日（Host：Lestari）。",
@@ -633,9 +844,13 @@
     {
       "id": "entrepreneur-web3-monthly",
       "name": "Entrepreneur / Web3 Monthly Meetup",
-      "category": "event",
+      "category": "connect",
       "area": "canggu",
-      "tags": ["web3", "entrepreneur", "monthly"],
+      "tags": [
+        "web3",
+        "entrepreneur",
+        "monthly"
+      ],
       "host": "Jihad",
       "description": {
         "zh": "每月一次的 Web3 / 創業者聚會（Host：Jihad）。",
@@ -648,10 +863,18 @@
     },
     {
       "id": "canggu-nomad-meetup",
-      "name": { "zh": "Canggu 數位遊牧聚會", "en": "Canggu Digital Nomad Meetup", "id": "Meetup Nomad Digital Canggu" },
-      "category": "event",
+      "name": {
+        "zh": "Canggu 數位遊牧聚會",
+        "en": "Canggu Digital Nomad Meetup",
+        "id": "Meetup Nomad Digital Canggu"
+      },
+      "category": "connect",
       "area": "canggu",
-      "tags": ["nomad", "social", "networking"],
+      "tags": [
+        "nomad",
+        "social",
+        "networking"
+      ],
       "host": "Peter, Ella",
       "description": {
         "zh": "Canggu 在地遊牧定期聚會（Host：Peter, Ella）。",

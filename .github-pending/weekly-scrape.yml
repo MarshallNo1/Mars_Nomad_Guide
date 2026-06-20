@@ -1,0 +1,110 @@
+name: Weekly Data Refresh
+
+# 每週一 02:00 UTC = 峇里時間（WITA, UTC+8）週一 10:00
+# 也支援手動觸發（Actions → Run workflow）
+on:
+  schedule:
+    - cron: '0 2 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: write   # 允許 commit + push 回 repo
+  issues: write     # 失敗時可開 issue 通知
+
+concurrency:
+  group: weekly-scrape
+  cancel-in-progress: false
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Scrape Nomeo (with safety guard)
+        id: scrape_nomeo
+        continue-on-error: true
+        run: npm run scrape:nomeo
+
+      - name: Scrape Megatix (with safety guard)
+        id: scrape_megatix
+        continue-on-error: true
+        run: npm run scrape:megatix
+
+      - name: Summarize changes
+        id: diff
+        run: |
+          if git diff --quiet src/data/; then
+            echo "No data changes."
+            echo "changed=false" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          echo "changed=true" >> $GITHUB_OUTPUT
+
+          # Build a short summary of which files changed and counts
+          summary=""
+          for f in src/data/nomeo-bali-events.json src/data/megatix-bali-events.json; do
+            if git diff --quiet "$f" 2>/dev/null; then continue; fi
+            if [ -f "$f" ]; then
+              count=$(node -e "console.log(JSON.parse(require('fs').readFileSync('$f','utf8')).count || 0)")
+              summary="${summary}- $(basename $f): ${count} places\n"
+            fi
+          done
+          {
+            echo "summary<<EOF"
+            echo -e "$summary"
+            echo "EOF"
+          } >> $GITHUB_OUTPUT
+
+      - name: Commit and push
+        if: steps.diff.outputs.changed == 'true'
+        run: |
+          git config user.name  "mars-data-bot"
+          git config user.email "mars-data-bot@users.noreply.github.com"
+          git add src/data/
+          git commit -m "🤖 Weekly data refresh ($(date -u +%Y-%m-%d))
+
+          ${{ steps.diff.outputs.summary }}"
+          git push
+
+      - name: Open issue on scraper failure
+        if: steps.scrape_nomeo.outcome == 'failure' || steps.scrape_megatix.outcome == 'failure'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const failed = []
+            if ('${{ steps.scrape_nomeo.outcome }}' === 'failure') failed.push('Nomeo')
+            if ('${{ steps.scrape_megatix.outcome }}' === 'failure') failed.push('Megatix')
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `⚠️ Weekly scraper failed: ${failed.join(', ')} (${new Date().toISOString().slice(0,10)})`,
+              body: [
+                `One or more weekly scrapers failed in run [${context.runId}](${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}).`,
+                ``,
+                `**Failed**: ${failed.join(', ')}`,
+                ``,
+                `Possible causes:`,
+                `- Source site changed its HTML structure`,
+                `- Network / rate-limit issue (re-run may succeed)`,
+                `- Safety guard tripped (new count < 50% of previous — likely site change)`,
+                ``,
+                `Re-run with: Actions → Weekly Data Refresh → Run workflow.`,
+              ].join('\n'),
+              labels: ['scraper', 'automation'],
+            })

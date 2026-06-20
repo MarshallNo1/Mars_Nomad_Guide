@@ -21,16 +21,20 @@
     "resultCount": "{{count}} hasil"
   },
   "category": {
-    "coworking": "Kerja & Kafe",
-    "coliving": "Tempat Tinggal",
-    "community": "Komunitas",
-    "event": "Acara & Meetup"
+    "eat": "Makan",
+    "stay": "Tinggal",
+    "work": "Kerja",
+    "wellness": "Kesejahteraan",
+    "play": "Main",
+    "connect": "Terhubung"
   },
   "section": {
-    "coworking": "Kerja (Coworking / Kafe)",
-    "coliving": "Tempat Tinggal (Co-living / Hostel)",
-    "community": "Komunitas",
-    "event": "Acara & Meetup"
+    "eat": "🍽️ Makan (Eat)",
+    "stay": "🏨 Tinggal (Stay)",
+    "work": "💻 Kerja (Work)",
+    "wellness": "🧘 Kesejahteraan (Wellness)",
+    "play": "🌊 Main (Play)",
+    "connect": "👥 Terhubung (Connect)"
   },
   "card": {
     "openMap": "Google Maps",

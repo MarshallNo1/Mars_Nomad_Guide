@@ -7,14 +7,21 @@ import id from './locales/id.json'
 
 import baliData from './data/bali.json'
 import nomeoBaliEvents from './data/nomeo-bali-events.json'
+import megatixBaliEvents from './data/megatix-bali-events.json'
 
 // ──────────────────────────────────────────────────────────────────────────
 // 多城市資料註冊：之後加峴港 / 清邁，只要 import 新 JSON 並 push 進來即可
-// Nomeo 動態活動會合併進每個城市的 places
+// 動態來源（每週由 GitHub Actions 更新）會合併進每個城市的 places：
+//   - Nomeo.io   → connect (meetups)
+//   - Megatix.co.id → wellness / play (events, nightlife, watersport)
 // ──────────────────────────────────────────────────────────────────────────
 const baliMerged = {
   ...baliData,
-  places: [...baliData.places, ...(nomeoBaliEvents?.places || [])],
+  places: [
+    ...baliData.places,
+    ...(nomeoBaliEvents?.places || []),
+    ...(megatixBaliEvents?.places || []),
+  ],
 }
 
 const CITIES = {
@@ -162,10 +169,12 @@ function renderFilters(city) {
 
   const categoryOpts = [
     { value: 'all', label: t('filter.all') },
-    { value: 'coworking', label: t('category.coworking') },
-    { value: 'coliving', label: t('category.coliving') },
-    { value: 'community', label: t('category.community') },
-    { value: 'event', label: t('category.event') },
+    { value: 'eat', label: t('category.eat') },
+    { value: 'stay', label: t('category.stay') },
+    { value: 'work', label: t('category.work') },
+    { value: 'wellness', label: t('category.wellness') },
+    { value: 'play', label: t('category.play') },
+    { value: 'connect', label: t('category.connect') },
   ]
   const areaOpts = [
     { value: 'all', label: t('filter.all') },
@@ -239,7 +248,7 @@ function renderGrid(city) {
   }
 
   // 按類別分組顯示
-  const CATEGORY_ORDER = ['coworking', 'coliving', 'community', 'event']
+  const CATEGORY_ORDER = ['eat', 'stay', 'work', 'wellness', 'play', 'connect']
   const grouped = {}
   CATEGORY_ORDER.forEach((c) => (grouped[c] = []))
   filtered.forEach((p) => {

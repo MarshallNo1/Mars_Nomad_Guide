@@ -21,16 +21,20 @@
     "resultCount": "{{count}} results"
   },
   "category": {
-    "coworking": "Work & Café",
-    "coliving": "Stay & Co-living",
-    "community": "Community",
-    "event": "Events & Meetups"
+    "eat": "Eat",
+    "stay": "Stay",
+    "work": "Work",
+    "wellness": "Wellness",
+    "play": "Play",
+    "connect": "Connect"
   },
   "section": {
-    "coworking": "Work (Co-working / Café)",
-    "coliving": "Stay (Co-living / Hostel)",
-    "community": "Community",
-    "event": "Events & Meetups"
+    "eat": "🍽️ Eat",
+    "stay": "🏨 Stay",
+    "work": "💻 Work",
+    "wellness": "🧘 Wellness",
+    "play": "🌊 Play",
+    "connect": "👥 Connect"
   },
   "card": {
     "openMap": "Google Maps",

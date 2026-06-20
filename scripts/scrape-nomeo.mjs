@@ -1,12 +1,13 @@
 // 抓 Nomeo.io 最近活動，僅篩選 Bali 區域
 // Usage: node scripts/scrape-nomeo.mjs
 import { chromium } from 'playwright'
-import { writeFileSync } from 'node:fs'
+import { writeFileSync, readFileSync, existsSync, mkdirSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import { dirname, resolve } from 'node:path'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const OUT_PATH = resolve(__dirname, '../src/data/nomeo-bali-events.json')
+const SNAPSHOT_DIR = resolve(__dirname, '../src/data/snapshots')
 
 // Bali 地名清單（用來判斷活動是否在 Bali）
 const BALI_AREAS = [
@@ -126,13 +127,31 @@ async function main() {
     }
   })
 
-  // 輸出
-  writeFileSync(
-    OUT_PATH,
-    JSON.stringify({ scrapedAt: new Date().toISOString(), count: places.length, places }, null, 2),
-    'utf8'
-  )
+  // 失敗保險：若新結果 < 舊結果 50% 就中止（site 可能改版）
+  let previousCount = 0
+  if (existsSync(OUT_PATH)) {
+    try {
+      const prev = JSON.parse(readFileSync(OUT_PATH, 'utf-8'))
+      previousCount = prev.places?.length || 0
+    } catch {}
+  }
+  if (previousCount > 0 && places.length < previousCount * 0.5) {
+    console.error(
+      `❌ ABORT: new count ${places.length} < 50% of previous ${previousCount}. ` +
+        `Refusing to overwrite. Site may have changed.`
+    )
+    await browser.close()
+    process.exit(1)
+  }
+
+  // 輸出 + 快照
+  const out = { scrapedAt: new Date().toISOString(), source: 'nomeo.io', count: places.length, places }
+  writeFileSync(OUT_PATH, JSON.stringify(out, null, 2) + '\n', 'utf8')
   console.log(`✓ Wrote ${places.length} events to ${OUT_PATH}`)
+
+  mkdirSync(SNAPSHOT_DIR, { recursive: true })
+  const stamp = new Date().toISOString().slice(0, 10)
+  writeFileSync(`${SNAPSHOT_DIR}/nomeo-${stamp}.json`, JSON.stringify(out, null, 2) + '\n', 'utf8')
 
   await browser.close()
 }
