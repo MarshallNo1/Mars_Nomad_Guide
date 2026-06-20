@@ -21,30 +21,29 @@
     "resultCount": "{{count}} results"
   },
   "category": {
-    "eat": "Eat",
     "stay": "Stay",
     "work": "Work",
+    "food": "Food",
     "wellness": "Wellness",
-    "play": "Play",
+    "nightlife": "Nightlife",
+    "outdoor": "Outdoor",
+    "entertainment": "Entertainment",
     "community": "Community"
   },
   "section": {
-    "eat": "🍽️ Eat",
-    "stay": "🏨 Stay",
-    "work": "💻 Work",
+    "stay": "🏨 Stay (Co-living, Hostel)",
+    "work": "💻 Work (Co-working, Work Cafe)",
+    "food": "🍷 Food & Dining",
     "wellness": "🧘 Wellness",
-    "play": "🌊 Play",
+    "nightlife": "🌃 Nightlife",
+    "outdoor": "🏄 Outdoor & Sports",
+    "entertainment": "🎨 Entertainment & Workshops",
     "community": "👥 Community",
     "community_groups": "Standing Groups",
     "community_events": "Upcoming Meetups",
     "wellness_yoga": "🧘‍♀️ Yoga & Movement",
-    "wellness_sound_breath": "🎵 Sound & Breath",
-    "wellness_ceremony": "🌀 Ceremony & Journey",
-    "wellness_healing": "💆 Healing & Bodywork",
-    "wellness_retreat": "🧠 Retreats & Workshops",
-    "play_nightlife": "🌃 Nightlife",
-    "play_entertainment": "🎭 Entertainment",
-    "play_outdoor": "🏄 Outdoor & Sports"
+    "wellness_healing": "💆 Healing & Energy",
+    "wellness_mental": "🧠 Mental & Growth"
   },
   "card": {
     "openMap": "Google Maps",

@@ -12,8 +12,8 @@ import megatixBaliEvents from './data/megatix-bali-events.json'
 // ──────────────────────────────────────────────────────────────────────────
 // 多城市資料註冊：之後加峴港 / 清邁，只要 import 新 JSON 並 push 進來即可
 // 動態來源（每週由 GitHub Actions 更新）會合併進每個城市的 places：
-//   - Nomeo.io   → connect (meetups)
-//   - Megatix.co.id → wellness / play (events, nightlife, watersport)
+//   - Nomeo.io   → community (meetups)
+//   - Megatix.co.id → wellness / nightlife / outdoor / entertainment / food
 // ──────────────────────────────────────────────────────────────────────────
 const baliMerged = {
   ...baliData,
@@ -169,11 +169,13 @@ function renderFilters(city) {
 
   const categoryOpts = [
     { value: 'all', label: t('filter.all') },
-    { value: 'eat', label: t('category.eat') },
     { value: 'stay', label: t('category.stay') },
     { value: 'work', label: t('category.work') },
+    { value: 'food', label: t('category.food') },
     { value: 'wellness', label: t('category.wellness') },
-    { value: 'play', label: t('category.play') },
+    { value: 'nightlife', label: t('category.nightlife') },
+    { value: 'outdoor', label: t('category.outdoor') },
+    { value: 'entertainment', label: t('category.entertainment') },
     { value: 'community', label: t('category.community') },
   ]
   const areaOpts = [
@@ -247,8 +249,8 @@ function renderGrid(city) {
       </section>`
   }
 
-  // 按類別分組顯示
-  const CATEGORY_ORDER = ['eat', 'stay', 'work', 'wellness', 'play', 'community']
+  // 按類別分組顯示（新版 8 大頂層分類）
+  const CATEGORY_ORDER = ['stay', 'work', 'food', 'wellness', 'nightlife', 'outdoor', 'entertainment', 'community']
   const grouped = {}
   CATEGORY_ORDER.forEach((c) => (grouped[c] = []))
   filtered.forEach((p) => {
@@ -294,18 +296,11 @@ function renderGrid(city) {
   // 依 subcategory 分桶
   const bySub = (items, keys) => keys.map((k) => items.filter((p) => p.subcategory === k))
 
-  // 子分類順序（與 i18n key 對應）
+  // Wellness 子分組（依 subcategory，3 群：yoga / healing / mental）
   const WELLNESS_SUBS = [
-    { key: 'yoga',         titleKey: 'section.wellness_yoga' },
-    { key: 'sound-breath', titleKey: 'section.wellness_sound_breath' },
-    { key: 'ceremony',     titleKey: 'section.wellness_ceremony' },
-    { key: 'healing',      titleKey: 'section.wellness_healing' },
-    { key: 'retreat',      titleKey: 'section.wellness_retreat' },
-  ]
-  const PLAY_SUBS = [
-    { key: 'nightlife',     titleKey: 'section.play_nightlife' },
-    { key: 'entertainment', titleKey: 'section.play_entertainment' },
-    { key: 'outdoor',       titleKey: 'section.play_outdoor' },
+    { key: 'yoga',    titleKey: 'section.wellness_yoga' },
+    { key: 'healing', titleKey: 'section.wellness_healing' },
+    { key: 'mental',  titleKey: 'section.wellness_mental' },
   ]
 
   return CATEGORY_ORDER.filter((c) => grouped[c]?.length > 0)
@@ -323,16 +318,14 @@ function renderGrid(city) {
         return renderGroupedSection(cat, items, subGroups)
       }
 
-      // wellness / play：依 subcategory 拆子分組
-      if (cat === 'wellness' || cat === 'play') {
-        const defs = cat === 'wellness' ? WELLNESS_SUBS : PLAY_SUBS
-        const buckets = bySub(items, defs.map((d) => d.key))
-        // 未分類的（沒有 subcategory 或不在子類清單）放在最後一個 bucket
-        const knownKeys = new Set(defs.map((d) => d.key))
+      // wellness：依 subcategory 拆 3 子群
+      if (cat === 'wellness') {
+        const buckets = bySub(items, WELLNESS_SUBS.map((d) => d.key))
+        const knownKeys = new Set(WELLNESS_SUBS.map((d) => d.key))
         const others = items.filter((p) => !p.subcategory || !knownKeys.has(p.subcategory))
-        const subGroups = defs.map((d, i) => ({ titleKey: d.titleKey, items: buckets[i] }))
+        const subGroups = WELLNESS_SUBS.map((d, i) => ({ titleKey: d.titleKey, items: buckets[i] }))
         if (others.length > 0) {
-          // 併入最後一個有東西的桶；若全空，仍然顯示為第一個子類
+          // mental 是 catch-all，未分類併入
           subGroups[subGroups.length - 1].items = subGroups[subGroups.length - 1].items.concat(others)
         }
         return renderGroupedSection(cat, items, subGroups)

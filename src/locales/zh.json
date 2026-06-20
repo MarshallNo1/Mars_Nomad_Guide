@@ -21,30 +21,29 @@
     "resultCount": "{{count}} 個結果"
   },
   "category": {
-    "eat": "吃",
     "stay": "住",
     "work": "工作",
+    "food": "美食體驗",
     "wellness": "身心靈",
-    "play": "玩",
+    "nightlife": "夜生活",
+    "outdoor": "戶外運動",
+    "entertainment": "娛樂與工作坊",
     "community": "社群"
   },
   "section": {
-    "eat": "🍽️ 吃 (Eat)",
-    "stay": "🏨 住 (Stay)",
-    "work": "💻 工作 (Work)",
+    "stay": "🏨 住 (Co-living, Hostel)",
+    "work": "💻 工作 (Co-working, Work Cafe)",
+    "food": "🍷 美食體驗 (Food & Dining)",
     "wellness": "🧘 身心靈 (Wellness)",
-    "play": "🌊 玩 (Play)",
+    "nightlife": "🌃 夜生活 (Nightlife)",
+    "outdoor": "🏄 戶外運動 (Outdoor & Sports)",
+    "entertainment": "🎨 娛樂與工作坊 (Entertainment)",
     "community": "👥 社群 (Community)",
     "community_groups": "常駐社群 / 群組",
     "community_events": "近期活動 / 聚會",
-    "wellness_yoga": "🧘‍♀️ Yoga & Movement",
-    "wellness_sound_breath": "🎵 Sound & Breath",
-    "wellness_ceremony": "🌀 Ceremony & Journey",
-    "wellness_healing": "💆 Healing & Bodywork",
-    "wellness_retreat": "🧠 Retreats & Workshops",
-    "play_nightlife": "🌃 Nightlife",
-    "play_entertainment": "🎭 Entertainment",
-    "play_outdoor": "🏄 Outdoor & Sports"
+    "wellness_yoga": "🧘‍♀️ 瑜伽與身體練習 (Yoga & Movement)",
+    "wellness_healing": "💆 療癒與能量 (Healing & Energy)",
+    "wellness_mental": "🧠 心靈成長 (Mental & Growth)"
   },
   "card": {
     "openMap": "Google Maps",

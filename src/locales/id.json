@@ -21,30 +21,29 @@
     "resultCount": "{{count}} hasil"
   },
   "category": {
-    "eat": "Makan",
     "stay": "Tinggal",
     "work": "Kerja",
+    "food": "Kuliner",
     "wellness": "Kesejahteraan",
-    "play": "Main",
+    "nightlife": "Kehidupan Malam",
+    "outdoor": "Outdoor",
+    "entertainment": "Hiburan",
     "community": "Komunitas"
   },
   "section": {
-    "eat": "🍽️ Makan (Eat)",
-    "stay": "🏨 Tinggal (Stay)",
-    "work": "💻 Kerja (Work)",
+    "stay": "🏨 Tinggal (Co-living, Hostel)",
+    "work": "💻 Kerja (Co-working, Work Cafe)",
+    "food": "🍷 Kuliner & Pengalaman Makan",
     "wellness": "🧘 Kesejahteraan (Wellness)",
-    "play": "🌊 Main (Play)",
+    "nightlife": "🌃 Kehidupan Malam (Nightlife)",
+    "outdoor": "🏄 Outdoor & Olahraga",
+    "entertainment": "🎨 Hiburan & Workshop",
     "community": "👥 Komunitas (Community)",
     "community_groups": "Grup Komunitas",
     "community_events": "Acara Mendatang",
     "wellness_yoga": "🧘‍♀️ Yoga & Gerakan",
-    "wellness_sound_breath": "🎵 Suara & Napas",
-    "wellness_ceremony": "🌀 Upacara & Perjalanan",
-    "wellness_healing": "💆 Penyembuhan & Bodywork",
-    "wellness_retreat": "🧠 Retret & Workshop",
-    "play_nightlife": "🌃 Kehidupan Malam",
-    "play_entertainment": "🎭 Hiburan",
-    "play_outdoor": "🏄 Outdoor & Olahraga"
+    "wellness_healing": "💆 Penyembuhan & Energi",
+    "wellness_mental": "🧠 Pertumbuhan Mental"
   },
   "card": {
     "openMap": "Google Maps",
