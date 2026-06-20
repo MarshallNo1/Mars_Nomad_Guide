@@ -26,7 +26,7 @@
     "work": "工作",
     "wellness": "身心靈",
     "play": "玩",
-    "connect": "連結"
+    "community": "社群"
   },
   "section": {
     "eat": "🍽️ 吃 (Eat)",
@@ -34,7 +34,9 @@
     "work": "💻 工作 (Work)",
     "wellness": "🧘 身心靈 (Wellness)",
     "play": "🌊 玩 (Play)",
-    "connect": "👥 連結 (Connect)"
+    "community": "👥 社群 (Community)",
+    "community_groups": "常駐社群 / 群組",
+    "community_events": "近期活動 / 聚會"
   },
   "card": {
     "openMap": "Google Maps",

@@ -26,7 +26,7 @@
     "work": "Kerja",
     "wellness": "Kesejahteraan",
     "play": "Main",
-    "connect": "Terhubung"
+    "community": "Komunitas"
   },
   "section": {
     "eat": "🍽️ Makan (Eat)",
@@ -34,7 +34,9 @@
     "work": "💻 Kerja (Work)",
     "wellness": "🧘 Kesejahteraan (Wellness)",
     "play": "🌊 Main (Play)",
-    "connect": "👥 Terhubung (Connect)"
+    "community": "👥 Komunitas (Community)",
+    "community_groups": "Grup Komunitas",
+    "community_events": "Acara Mendatang"
   },
   "card": {
     "openMap": "Google Maps",

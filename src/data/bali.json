@@ -391,7 +391,7 @@
         "en": "Jungle-aesthetic café with a stunning vibe.",
         "id": "Kafe bernuansa hutan, suasana memukau."
       },
-      "image": "https://images.unsplash.com/photo-1464983953574-0892a716854b?w=800&q=70",
+      "image": "/images/places/reina-jungla.jpg",
       "gmaps": "https://www.google.com/maps/search/?api=1&query=Reina+Jungla+Ubud",
       "link": ""
     },
@@ -624,7 +624,7 @@
     {
       "id": "digital-nomad-bali-fb",
       "name": "Digital Nomad in Bali",
-      "category": "connect",
+      "category": "community",
       "area": "all",
       "tags": [
         "facebook",
@@ -643,7 +643,7 @@
     {
       "id": "bali-nomads-main",
       "name": "Bali Nomads Main Group",
-      "category": "connect",
+      "category": "community",
       "area": "all",
       "tags": [
         "telegram",
@@ -662,7 +662,7 @@
     {
       "id": "bali-nomads-ubud",
       "name": "Bali Nomads in Ubud",
-      "category": "connect",
+      "category": "community",
       "area": "ubud",
       "tags": [
         "telegram",
@@ -681,7 +681,7 @@
     {
       "id": "bali-nomads-entrepreneurs",
       "name": "Bali Nomads Entrepreneurs",
-      "category": "connect",
+      "category": "community",
       "area": "all",
       "tags": [
         "entrepreneur",
@@ -700,7 +700,7 @@
     {
       "id": "bali-nomads-coworking",
       "name": "Bali Nomads Coworking",
-      "category": "connect",
+      "category": "community",
       "area": "all",
       "tags": [
         "coworking",
@@ -718,7 +718,7 @@
     {
       "id": "bali-party-people",
       "name": "Bali Party People",
-      "category": "connect",
+      "category": "community",
       "area": "all",
       "tags": [
         "nightlife",
@@ -737,7 +737,7 @@
     {
       "id": "bali-content-creators",
       "name": "Bali Content Creators",
-      "category": "connect",
+      "category": "community",
       "area": "all",
       "tags": [
         "content",
@@ -760,7 +760,7 @@
         "en": "Badminton Meetup",
         "id": "Meetup Badminton"
       },
-      "category": "connect",
+      "category": "community",
       "area": "canggu",
       "tags": [
         "sport",
@@ -783,7 +783,7 @@
         "en": "Padel Court Booking",
         "id": "Booking Lapangan Padel"
       },
-      "category": "connect",
+      "category": "community",
       "area": "canggu",
       "tags": [
         "sport",
@@ -805,7 +805,7 @@
         "en": "BukitHub Coworking Free Day Trial",
         "id": "Trial Gratis Sehari BukitHub Coworking"
       },
-      "category": "connect",
+      "category": "community",
       "area": "canggu",
       "tags": [
         "coworking",
@@ -824,7 +824,7 @@
     {
       "id": "tuesday-coworking-ubud",
       "name": "Tuesday Coworking in Ubud",
-      "category": "connect",
+      "category": "community",
       "area": "ubud",
       "tags": [
         "coworking",
@@ -844,7 +844,7 @@
     {
       "id": "entrepreneur-web3-monthly",
       "name": "Entrepreneur / Web3 Monthly Meetup",
-      "category": "connect",
+      "category": "community",
       "area": "canggu",
       "tags": [
         "web3",
@@ -868,7 +868,7 @@
         "en": "Canggu Digital Nomad Meetup",
         "id": "Meetup Nomad Digital Canggu"
       },
-      "category": "connect",
+      "category": "community",
       "area": "canggu",
       "tags": [
         "nomad",

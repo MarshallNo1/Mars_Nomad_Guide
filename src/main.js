@@ -174,7 +174,7 @@ function renderFilters(city) {
     { value: 'work', label: t('category.work') },
     { value: 'wellness', label: t('category.wellness') },
     { value: 'play', label: t('category.play') },
-    { value: 'connect', label: t('category.connect') },
+    { value: 'community', label: t('category.community') },
   ]
   const areaOpts = [
     { value: 'all', label: t('filter.all') },
@@ -193,29 +193,29 @@ function renderFilters(city) {
           class="w-full sm:w-64 rounded-full border border-ink-600 bg-ink-800/70 pl-9 pr-3 py-2 text-sm placeholder-sand-300/40 focus:border-mars-500/60 focus:outline-none focus:ring-1 focus:ring-mars-500/40"/>
       </label>
 
-      <select id="categorySelect" class="select-pill">
+      <select id="categorySelect" class="select-pill" aria-label="${t('filter.category')}">
         ${categoryOpts
           .map(
             (o) =>
               `<option value="${o.value}" ${
                 state.filter.category === o.value ? 'selected' : ''
-              }>${t('filter.category')}: ${o.label}</option>`
+              }>${o.value === 'all' ? `${t('filter.category')}: ${o.label}` : o.label}</option>`
           )
           .join('')}
       </select>
 
-      <select id="areaSelect" class="select-pill">
+      <select id="areaSelect" class="select-pill" aria-label="${t('filter.area')}">
         ${areaOpts
           .map(
             (o) =>
               `<option value="${o.value}" ${
                 state.filter.area === o.value ? 'selected' : ''
-              }>${t('filter.area')}: ${o.label}</option>`
+              }>${o.value === 'all' ? `${t('filter.area')}: ${o.label}` : o.label}</option>`
           )
           .join('')}
       </select>
 
-      <select id="tagSelect" class="select-pill">
+      <select id="tagSelect" class="select-pill" aria-label="${t('filter.tag')}">
         <option value="all" ${state.filter.tag === 'all' ? 'selected' : ''}>${t('filter.tag')}: ${t('filter.all')}</option>
         ${tagOptions
           .map(
@@ -248,7 +248,7 @@ function renderGrid(city) {
   }
 
   // 按類別分組顯示
-  const CATEGORY_ORDER = ['eat', 'stay', 'work', 'wellness', 'play', 'connect']
+  const CATEGORY_ORDER = ['eat', 'stay', 'work', 'wellness', 'play', 'community']
   const grouped = {}
   CATEGORY_ORDER.forEach((c) => (grouped[c] = []))
   filtered.forEach((p) => {
@@ -256,20 +256,64 @@ function renderGrid(city) {
     grouped[p.category].push(p)
   })
 
+  // 渲染一個 section block（標題 + 卡片網格）
+  const renderBlock = (titleKey, items) => `
+    <div class="flex items-end justify-between gap-4">
+      <h2 class="section-title">${t(titleKey)}</h2>
+      <span class="text-xs font-mono text-sand-300/60">${items.length}</span>
+    </div>
+    <div class="section-rule"></div>
+    <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      ${items.map(renderCard).join('')}
+    </div>`
+
   return CATEGORY_ORDER.filter((c) => grouped[c]?.length > 0)
-    .map(
-      (cat) => `
+    .map((cat) => {
+      // community 類別特殊處理：拆「常駐社群」與「近期活動」
+      if (cat === 'community') {
+        const items = grouped[cat]
+        // 常駐社群 = 手動策展（沒有 source 欄位，或 source 為 'curated'）
+        // 近期活動 = 自動爬蟲產生（source = 'nomeo' / 'megatix'）
+        const groups = items.filter((p) => !p.source || p.source === 'curated')
+        const events = items.filter((p) => p.source === 'nomeo' || p.source === 'megatix')
+
+        // 大類別總覽標題
+        let html = `
     <section class="container-narrow py-12">
       <div class="flex items-end justify-between gap-4">
-        <h2 class="section-title">${t('section.' + cat)}</h2>
-        <span class="text-xs font-mono text-sand-300/60">${grouped[cat].length}</span>
+        <h2 class="section-title">${t('section.community')}</h2>
+        <span class="text-xs font-mono text-sand-300/60">${items.length}</span>
       </div>
-      <div class="section-rule"></div>
-      <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-        ${grouped[cat].map(renderCard).join('')}
-      </div>
+      <div class="section-rule"></div>`
+
+        if (groups.length > 0) {
+          html += `
+      <div class="mt-10">
+        <h3 class="label-overline mb-4">${t('section.community_groups')} · ${groups.length}</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          ${groups.map(renderCard).join('')}
+        </div>
+      </div>`
+        }
+        if (events.length > 0) {
+          html += `
+      <div class="mt-14">
+        <h3 class="label-overline mb-4">${t('section.community_events')} · ${events.length}</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          ${events.map(renderCard).join('')}
+        </div>
+      </div>`
+        }
+        html += `\n    </section>`
+        return html
+      }
+
+      // 其他類別：正常單一 grid
+      return `
+    <section class="container-narrow py-12">
+      ${renderBlock('section.' + cat, grouped[cat])}
     </section>`
-    )
+    })
     .join('')
 }
 
