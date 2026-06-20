@@ -36,7 +36,15 @@
     "play": "🌊 玩 (Play)",
     "community": "👥 社群 (Community)",
     "community_groups": "常駐社群 / 群組",
-    "community_events": "近期活動 / 聚會"
+    "community_events": "近期活動 / 聚會",
+    "wellness_yoga": "🧘‍♀️ Yoga & Movement",
+    "wellness_sound_breath": "🎵 Sound & Breath",
+    "wellness_ceremony": "🌀 Ceremony & Journey",
+    "wellness_healing": "💆 Healing & Bodywork",
+    "wellness_retreat": "🧠 Retreats & Workshops",
+    "play_nightlife": "🌃 Nightlife",
+    "play_entertainment": "🎭 Entertainment",
+    "play_outdoor": "🏄 Outdoor & Sports"
   },
   "card": {
     "openMap": "Google Maps",

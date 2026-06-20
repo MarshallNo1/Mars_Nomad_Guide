@@ -267,51 +267,81 @@ function renderGrid(city) {
       ${items.map(renderCard).join('')}
     </div>`
 
-  return CATEGORY_ORDER.filter((c) => grouped[c]?.length > 0)
-    .map((cat) => {
-      // community 類別特殊處理：拆「常駐社群」與「近期活動」
-      if (cat === 'community') {
-        const items = grouped[cat]
-        // 常駐社群 = 手動策展（沒有 source 欄位，或 source 為 'curated'）
-        // 近期活動 = 自動爬蟲產生（source = 'nomeo' / 'megatix'）
-        const groups = items.filter((p) => !p.source || p.source === 'curated')
-        const events = items.filter((p) => p.source === 'nomeo' || p.source === 'megatix')
-
-        // 大類別總覽標題
-        let html = `
+  // 渲染含子分組的大類別 section（一個 h2 + 多個 h3 sub-block）
+  const renderGroupedSection = (cat, items, subGroups) => {
+    let html = `
     <section class="container-narrow py-12">
       <div class="flex items-end justify-between gap-4">
-        <h2 class="section-title">${t('section.community')}</h2>
+        <h2 class="section-title">${t('section.' + cat)}</h2>
         <span class="text-xs font-mono text-sand-300/60">${items.length}</span>
       </div>
       <div class="section-rule"></div>`
+    subGroups.forEach(({ titleKey, items: subItems }, idx) => {
+      if (subItems.length === 0) return
+      const marginCls = idx === 0 ? 'mt-10' : 'mt-14'
+      html += `
+      <div class="${marginCls}">
+        <h3 class="label-overline mb-4">${t(titleKey)} · ${subItems.length}</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          ${subItems.map(renderCard).join('')}
+        </div>
+      </div>`
+    })
+    html += `\n    </section>`
+    return html
+  }
 
-        if (groups.length > 0) {
-          html += `
-      <div class="mt-10">
-        <h3 class="label-overline mb-4">${t('section.community_groups')} · ${groups.length}</h3>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          ${groups.map(renderCard).join('')}
-        </div>
-      </div>`
+  // 依 subcategory 分桶
+  const bySub = (items, keys) => keys.map((k) => items.filter((p) => p.subcategory === k))
+
+  // 子分類順序（與 i18n key 對應）
+  const WELLNESS_SUBS = [
+    { key: 'yoga',         titleKey: 'section.wellness_yoga' },
+    { key: 'sound-breath', titleKey: 'section.wellness_sound_breath' },
+    { key: 'ceremony',     titleKey: 'section.wellness_ceremony' },
+    { key: 'healing',      titleKey: 'section.wellness_healing' },
+    { key: 'retreat',      titleKey: 'section.wellness_retreat' },
+  ]
+  const PLAY_SUBS = [
+    { key: 'nightlife',     titleKey: 'section.play_nightlife' },
+    { key: 'entertainment', titleKey: 'section.play_entertainment' },
+    { key: 'outdoor',       titleKey: 'section.play_outdoor' },
+  ]
+
+  return CATEGORY_ORDER.filter((c) => grouped[c]?.length > 0)
+    .map((cat) => {
+      const items = grouped[cat]
+
+      // community：拆「常駐社群」與「近期活動」（依 source 欄位）
+      if (cat === 'community') {
+        const groups = items.filter((p) => !p.source || p.source === 'curated')
+        const events = items.filter((p) => p.source === 'nomeo' || p.source === 'megatix')
+        const subGroups = [
+          { titleKey: 'section.community_groups', items: groups },
+          { titleKey: 'section.community_events', items: events },
+        ]
+        return renderGroupedSection(cat, items, subGroups)
+      }
+
+      // wellness / play：依 subcategory 拆子分組
+      if (cat === 'wellness' || cat === 'play') {
+        const defs = cat === 'wellness' ? WELLNESS_SUBS : PLAY_SUBS
+        const buckets = bySub(items, defs.map((d) => d.key))
+        // 未分類的（沒有 subcategory 或不在子類清單）放在最後一個 bucket
+        const knownKeys = new Set(defs.map((d) => d.key))
+        const others = items.filter((p) => !p.subcategory || !knownKeys.has(p.subcategory))
+        const subGroups = defs.map((d, i) => ({ titleKey: d.titleKey, items: buckets[i] }))
+        if (others.length > 0) {
+          // 併入最後一個有東西的桶；若全空，仍然顯示為第一個子類
+          subGroups[subGroups.length - 1].items = subGroups[subGroups.length - 1].items.concat(others)
         }
-        if (events.length > 0) {
-          html += `
-      <div class="mt-14">
-        <h3 class="label-overline mb-4">${t('section.community_events')} · ${events.length}</h3>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          ${events.map(renderCard).join('')}
-        </div>
-      </div>`
-        }
-        html += `\n    </section>`
-        return html
+        return renderGroupedSection(cat, items, subGroups)
       }
 
       // 其他類別：正常單一 grid
       return `
     <section class="container-narrow py-12">
-      ${renderBlock('section.' + cat, grouped[cat])}
+      ${renderBlock('section.' + cat, items)}
     </section>`
     })
     .join('')

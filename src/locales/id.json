@@ -36,7 +36,15 @@
     "play": "🌊 Main (Play)",
     "community": "👥 Komunitas (Community)",
     "community_groups": "Grup Komunitas",
-    "community_events": "Acara Mendatang"
+    "community_events": "Acara Mendatang",
+    "wellness_yoga": "🧘‍♀️ Yoga & Gerakan",
+    "wellness_sound_breath": "🎵 Suara & Napas",
+    "wellness_ceremony": "🌀 Upacara & Perjalanan",
+    "wellness_healing": "💆 Penyembuhan & Bodywork",
+    "wellness_retreat": "🧠 Retret & Workshop",
+    "play_nightlife": "🌃 Kehidupan Malam",
+    "play_entertainment": "🎭 Hiburan",
+    "play_outdoor": "🏄 Outdoor & Olahraga"
   },
   "card": {
     "openMap": "Google Maps",
