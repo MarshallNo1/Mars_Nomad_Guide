@@ -272,7 +272,7 @@ function renderGrid(city) {
   // 渲染含子分組的大類別 section（一個 h2 + 多個 h3 sub-block）
   const renderGroupedSection = (cat, items, subGroups) => {
     let html = `
-    <section class="container-narrow py-12">
+    <section id="section-${cat}" class="container-narrow py-12 scroll-mt-32">
       <div class="flex items-end justify-between gap-4">
         <h2 class="section-title">${t('section.' + cat)}</h2>
         <span class="text-xs font-mono text-sand-300/60">${items.length}</span>
@@ -333,7 +333,7 @@ function renderGrid(city) {
 
       // 其他類別：正常單一 grid
       return `
-    <section class="container-narrow py-12">
+    <section id="section-${cat}" class="container-narrow py-12 scroll-mt-32">
       ${renderBlock('section.' + cat, items)}
     </section>`
     })
@@ -512,7 +512,18 @@ function attachHandlers() {
 
   // 下拉
   const catSel = document.getElementById('categorySelect')
-  if (catSel) catSel.addEventListener('change', (e) => { state.filter.category = e.target.value; render() })
+  if (catSel) catSel.addEventListener('change', (e) => {
+    const newCat = e.target.value
+    state.filter.category = newCat
+    render()
+    // render 後 scroll 到對應 section（'all' 則回到篩選器頂端）
+    requestAnimationFrame(() => {
+      const target = newCat === 'all'
+        ? document.getElementById('filters')
+        : document.getElementById('section-' + newCat)
+      target?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    })
+  })
   const areaSel = document.getElementById('areaSelect')
   if (areaSel) areaSel.addEventListener('change', (e) => { state.filter.area = e.target.value; render() })
   const tagSel = document.getElementById('tagSelect')
